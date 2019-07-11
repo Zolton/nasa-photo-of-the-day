@@ -23,9 +23,11 @@ function App() {
 
   return (
     <div className="App">
+
       {/* Ternary to buy time to fetch the axios get request.  First time around, 
       nasaData.title is empty; on the re-render, it's full, so the ternary displays Loading... until the
       axios get request resolves and forces a re-render, at which time nasaData is populated and true */}
+      
       {nasaData ? (
         <>
           <h1>{nasaData.title}</h1>
