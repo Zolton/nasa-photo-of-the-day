@@ -14,12 +14,14 @@ function App() {
     useEffect(() => {
       axios
         .get(
-          "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2012-03-14"
+          `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2012-03-14`
         )
         .then(res => setresData(res.data))
         .catch(error => console.log(error));
     }, []);
   }
+
+  const [reRender, setreRender] = useState(false)
 
   return (
     <div className="App">
@@ -39,6 +41,9 @@ function App() {
       ) : (
         <LoaderFile />
       )}
+      
+
+      <button onClick={()=>{setreRender(!reRender)}}>Click me to re-render</button>
     </div>
   );
 }
