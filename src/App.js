@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
+//import {loader} from "semantic-ui-css"
+import LoaderFile from "./Loader"
+import "semantic-ui-css/semantic.min.css"
+import { Image } from 'semantic-ui-react'
+
 
 function App() {
   const [nasaData, setresData] = useState();
-  const [resURL, setresURL] = useState();
-  const [resEx, setresExplanation] = useState();
-  const [resTitle, setresTitle] = useState();
-  const [resCopyright, setresCopy] = useState();
-
-  //console.log(nasaData.map(data=>data))
-  //console.log(nasaData.map(data=>data.url));
-  //console.log(nasaData.url);
 
   {
     useEffect(() => {
@@ -32,12 +29,13 @@ function App() {
       {nasaData ? (
         <>
           <h1>{nasaData.title}</h1>
-          <img src={nasaData.url} />
+          <img src={nasaData.url} className="ui large image" />
+          {/* <img src={nasaData.url} /> */}
           <h3>NASA explanation: {nasaData.explanation}</h3>
           <h4>Copyright: {nasaData.copyright}</h4>
         </>
       ) : (
-        <div>Loading...</div>
+        <LoaderFile />
       )}
     </div>
   );
