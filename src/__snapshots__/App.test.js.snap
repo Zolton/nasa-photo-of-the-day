@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should match snapshot 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="ui active inverted dimmer"
+  >
+    <div
+      className="ui large text loader"
+    >
+      Loading NASA files.  This is gonna be good
+    </div>
+  </div>
+</div>
+`;
